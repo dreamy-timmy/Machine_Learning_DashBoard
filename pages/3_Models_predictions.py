@@ -18,7 +18,6 @@ y_reg = regression_data['price']
 X_train_reg, X_test_reg, y_train_reg, y_test_reg = train_test_split(X_reg, y_reg, test_size= .3)
 
 
-# 1
 st.title('Предсказания моделей регрессии')
 
 first_model = joblib.load("models/MODEL_ONE_polynomial_best_regression_model.pkl")
@@ -26,7 +25,6 @@ fourth_model = joblib.load("models/MODEL_FOUR_bagging_regressor")
 fiveth_model = joblib.load("models/MODEL_FIVE_stacking_regressor")
 second_model = joblib.load("models/MODEL_TWO_gradient_boosting_regressor")
 
-# print(r2_score(first_model.predict(X_test_reg), y_test_reg))
 
 area = st.slider('Площадь дома', 503, 8000, 1500)
 
@@ -102,6 +100,8 @@ if st.button('Предсказать стоимость дома'):
     st.text(f'Предсказаниe стэкинг модели: {five_prediction}')
     two_prediction = int(second_model.predict(test_data)[0])
     st.text(f'Предсказаниe модели градиентного бустинга: {two_prediction}')
+
+
 
 
 # 2
