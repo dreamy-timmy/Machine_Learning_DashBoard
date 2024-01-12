@@ -20,7 +20,7 @@ st.title('Предсказания моделей регрессии')
 
 first_model = joblib.load("models/MODEL_ONE_polynomial_best_regression_model.pkl")
 fourth_model = joblib.load("models/MODEL_FOUR_bagging_regressor")
-# fiveth_model = joblib.load("models/MODEL_FIVE_stacking_regressor")
+fiveth_model = joblib.load("models/MODEL_FIVE_stacking_regressor")
 second_model = joblib.load("models/MODEL_TWO_gradient_boosting_regressor")
 
 
@@ -94,8 +94,8 @@ if st.button('Предсказать стоимость дома'):
     st.text(f'Предсказаниe полиномиальной модели: {first_prediction}')
     four_prediction = int(fourth_model.predict(test_data)[0])
     st.text(f'Предсказаниe бэггинг модели: {four_prediction}')
-    # five_prediction = int(fiveth_model.predict(test_data)[0])
-    # st.text(f'Предсказаниe стэкинг модели: {five_prediction}')
+    five_prediction = int(fiveth_model.predict(test_data)[0])
+    st.text(f'Предсказаниe стэкинг модели: {five_prediction}')
     two_prediction = int(second_model.predict(test_data)[0])
     st.text(f'Предсказаниe модели градиентного бустинга: {two_prediction}')
 
