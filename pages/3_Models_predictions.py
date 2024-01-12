@@ -5,8 +5,6 @@ from sklearn.model_selection import train_test_split
 import tensorflow as tf
 import joblib
 
-from sklearn.metrics import r2_score
-
 st.set_page_config(page_title="Models predictions", page_icon="📈")
 
 
