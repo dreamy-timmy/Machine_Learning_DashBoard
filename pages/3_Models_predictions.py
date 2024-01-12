@@ -20,7 +20,7 @@ st.title('Предсказания моделей регрессии')
 
 first_model = joblib.load("models/MODEL_ONE_polynomial_best_regression_model.pkl")
 fourth_model = joblib.load("models/MODEL_FOUR_bagging_regressor")
-fiveth_model = joblib.load("models/MODEL_FIVE_stacking_regressor")
+# fiveth_model = joblib.load("models/MODEL_FIVE_stacking_regressor")
 second_model = joblib.load("models/MODEL_TWO_gradient_boosting_regressor")
 
 
@@ -94,8 +94,8 @@ if st.button('Предсказать стоимость дома'):
     st.text(f'Предсказаниe полиномиальной модели: {first_prediction}')
     four_prediction = int(fourth_model.predict(test_data)[0])
     st.text(f'Предсказаниe бэггинг модели: {four_prediction}')
-    five_prediction = int(fiveth_model.predict(test_data)[0])
-    st.text(f'Предсказаниe стэкинг модели: {five_prediction}')
+    # five_prediction = int(fiveth_model.predict(test_data)[0])
+    # st.text(f'Предсказаниe стэкинг модели: {five_prediction}')
     two_prediction = int(second_model.predict(test_data)[0])
     st.text(f'Предсказаниe модели градиентного бустинга: {two_prediction}')
 
@@ -117,29 +117,17 @@ st.title('Предсказания моделей классификации')
 sixth_model = tf.keras.models.load_model("models/MODEL_SIX_classification_NN")
 third_model = joblib.load("models/MODEL_THREE_gradient_boosting_classifier")
 
-
 Temperature = st.slider('Температура', -22.010000, 59.930000, 10.0)
-
 Humidity = st.slider('Влажность', 10.740000, 75.200000, 10.0)
-
 TVOC = st.slider('Индекс наличия Летучих Органических Соединений', 0.0, 60000.000000, 1000.0)
-
 eCO2 = st.slider('Эквивалент углекислого газа', 400.000000, 60000.000000, 10000.0)
- 
 Raw_H2 = st.slider('Необработанный водород', 10668.000000, 13803.000000, 1500.0)
-
 Raw_Ethanol = st.slider('Необработанный этанол', 15317.000000, 21410.000000, 1500.0)
-
 Pressure = st.slider('Давление', 930.852000, 939.861000, 1500.0)
-
 PM1_0 = st.slider('Ультрадисперсные частицы', 0.0, 14333.690000, 1500.0)
-
 PM2_5 = st.slider('Мельчайшие частицы', 0.0, 45432.260000, 1500.0)
-
 NC0_5 = st.slider('Коцентрация твёрдых частиц диаметром меньше 0.5 мкм', 0.0, 61482.030000, 3000.0)
-
 NC1_0 = st.slider('Коцентрация твёрдых частиц диаметром меньше 1.0 мкм', 0.0, 51914.680000, 3000.0)
-
 NC2_5 = st.slider('Коцентрация твёрдых частиц диаметром меньше 2.5 мкм', 0.0, 30026.438000, 1500.0)
 
 
